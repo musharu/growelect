@@ -1,0 +1,147 @@
+.recruit {
+    padding-block: 3rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 1160px;
+    position: relative;
+    margin: 0 auto;
+
+
+    /* border: blue 2px solid; */
+    gap: 5rem;
+}
+
+@media (max-width: 1160px) {
+    /* .recruit { padding-right: 0px; } */
+}
+@media (max-width: 768px) {
+    /* .recruit { padding-right: 5%; } */
+}
+
+
+.recruit-header h2 {
+    display: block;
+    font-size: 3rem; 
+    color: #000; 
+    white-space: nowrap;
+    margin: 0;
+}
+
+.recruit-header .en {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    color: rgb(91, 110, 171);  
+}
+
+.recruit-header {
+    line-height: 1.2;
+}
+
+
+.recruit .content-wrapper {
+    width: 100%;
+    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-items: center;
+    gap: 3rem 2rem;
+    /* border: green 2px solid; */
+
+}
+
+
+
+
+.recruit-text {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    align-self: center;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    gap: 1rem;
+    flex: 0 0 45%;
+    /* border: red 2px solid; */
+}
+
+
+
+.recruit-image {
+    flex: 1; /* 右側の画像部分も幅を使う */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+    /* border: red 2px solid; */
+
+}
+
+.recruit-image {
+    /* width: 100%; */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* .recruit-image {
+    width: 100%;
+    object-fit: cover;
+} */
+
+
+.recruit-body {
+    /* padding-right: 2rem; */
+    /* padding-inline: 2rem; */
+}
+
+
+
+
+
+
+.recruit-detail-button {
+    display: inline-block;
+    width: clamp(200px, 50%, 300px);
+    padding-block: 0.6rem;
+    background-color: rgb(91, 110, 171);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    align-self: center;
+}
+
+.recruit-detail-button:hover {
+    background-color: rgba(91, 110, 171, 0.7); /* 薄くする */
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .recruit .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recruit-header {
+        text-align: center;
+    }
+
+    .recruit-image {
+        /* padding-inline: 40px; */
+        /* max-width: 400px; */
+    }
+}

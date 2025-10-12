@@ -1,0 +1,147 @@
+.business {
+    padding-inline: 5%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+
+.business-header h2 {
+    display: block;
+    font-size: 3rem; 
+    color: #000; 
+    white-space: nowrap;
+    margin: 0;
+}
+
+.business-header .en {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    color: rgb(91, 110, 171);  
+}
+
+.business-header {
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.business-text {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* align-self: center; */
+    text-align: center;
+    /* flex: 1; */
+    /* position: relative; */
+    /* z-index: 2; */
+    /* gap: 1rem; */
+    /* flex: 0 0 45%; */
+    /* border: red 2px solid; */
+}
+
+
+
+
+
+
+
+.business-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* 小さい画面で折り返し */
+}
+
+.business-card {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 5px rgba(0,0,0,0.15);
+    position: relative;
+    min-width: 250px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px 20px 40px;
+    flex: 1;
+    position: relative;
+}
+
+.card-content h3 {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.card-content h3 .jp {
+    position: relative;
+    letter-spacing: 0.8em;  /* 注A: 同じにする*/
+}
+
+.card-content h3 .jp::after {
+    content: "";
+    margin-left: -0.8em;  /* 注A: 同じにする*/
+}
+
+
+.card-content h3 .en {
+    display: block;
+    font-size: 1rem;
+    color: rgb(91, 110, 171);
+    letter-spacing: normal;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #333;
+    white-space: normal;  
+    word-wrap: break-word; 
+    padding-inline: 2rem;
+}
+
+.card-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(91, 110, 171);
+    transition: background-color 0.3s ease;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+.card-button:hover {
+    background: rgba(91, 110, 171, 0.7);
+}
+
+/* レスポンシブ：画面幅が小さいとき縦配置 */
+@media (max-width: 768px) {
+    .business-cards {
+        flex-direction: column;
+    }
+    .business-card {
+        width: 100%;
+    }
+}
+

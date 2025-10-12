@@ -1,0 +1,175 @@
+.contact-section {
+  position: relative;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-section .contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(91, 110, 171, 0.95);
+  z-index: 1;
+}
+
+.contact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+  /* text-transform: uppercase; */
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+
+.contact-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5%; /* 横方向の間隔 */
+  row-gap: 40px;  /* 縦方向の間隔 */
+  justify-content: center; 
+}
+
+.contact-item {
+  flex: 1 1 48%;
+  max-width: 400px;
+}
+
+.contact-item.inquiry {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.box-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 左右アイコン・矢印 */
+.box-content img.icon,
+.box-content .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* 左側アイコン */
+.box-content img.icon {
+  left: 20px;
+  width: 35px;
+  height: auto;
+}
+
+/* 右側矢印（問い合わせ用） */
+.box-content .arrow {
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.phone .box-content {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.inquiry .box-content {
+  border: 2px solid #fff;
+  background: #fff;
+  color: rgb(91, 110, 171);
+  transition: filter 0.3s ease;
+  /* transition: background-color 0.3s ease; */
+}
+
+.inquiry .box-content:hover {
+  filter: brightness(0.9);
+  /* background: rgb(235, 235, 255); */
+}
+
+.inquiry .box-content .arrow {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+
+
+/* 電話番号下のテキスト */
+.phone-info {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.phone-info p {
+  display: flex;
+  margin: 0 0 5px 0;       
+  gap: 5px; 
+}
+.phone-info .label {
+  width: 4rem;
+  margin-inline-start: 110px;
+}
+
+
+
+
+
+
+.phone-info .value {
+  text-align: left;
+  flex: 1;
+}
+
+.arrow-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px; 
+}
+
+.arrow-buttons button {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: filter 0.3s ease;
+}
+
+.arrow-buttons button img {
+  width: 100%;
+  height: auto;
+}
+
+.arrow-buttons button:hover {
+  filter: brightness(0.8);
+}

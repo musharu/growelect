@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>growelect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_header.css">
+    <link rel="stylesheet" href="css/style_news.css">
+    <link rel="stylesheet" href="css/style_about.css">
+    <link rel="stylesheet" href="css/style_recruit.css">
+    <link rel="stylesheet" href="css/style_business.css">
+    <link rel="stylesheet" href="css/style_contact.css">
+    <link rel="stylesheet" href="css/style_footer.css">
+</head>
+
+<!-- rgb(91, 110, 171) -->
+
+<body>
+    
+    <div data-include="parts/header.html"></div>
+
+    <main>
+        <!-- メインビジュアル -->
+        <section>
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <img src="image/test_image.png" alt="img_01" class="bg-image">
+                    <!-- <img src="photo/main_visual_01.jpg" alt="img_01" class="bg-image"> -->
+                </div>
+                <div class="hero-slide">
+                    <img src="image/test_image_green.png" alt="img_02" class="bg-image">
+                    <!-- <img src="photo/main_visual_02.jpg" alt="img_02" class="bg-image"> -->
+                </div>
+                <div class="hero-slide">
+                    <img src="image/test_image_blue.png" alt="img_03" class="bg-image">
+                    <!-- <img src="photo/main_visual_03.jpg" alt="img_03" class="bg-image"> -->
+                </div>
+
+                <!-- キャッチコピー -->
+                <div class="hero-caption">
+                    <p>※ここにキャッチコピーを</p>
+                </div>
+
+                <div class="fg-overlay">
+                    <div class="fg-wrapper">
+                        <img src="image/bg_top1.png" alt="img_04" class="fg-image">
+                        <div class="hero-dots"></div>
+                    </div>
+                </div>
+
+                <button class="hero-prev"><span>&#10094;</span></button>
+                <button class="hero-next"><span>&#10095;</span></button>
+            </div>
+        </section>
+
+
+
+        <!-- 新着情報 -->
+        <section>
+            <div class="news">
+                <div class="news-header-wrapper">
+                    <div class="news-header">
+                        <h2 class="news-title">
+                            <span class="en">News</span>
+                            <span class="ja">お知らせ</span>
+                        </h2>
+                    </div>
+                    <div class="news-body">
+                        <ul class="news-list">
+                            <li class="news-items">
+                                <div class="news-item">
+                                    <time class="news-date" datetime="2025-08-23">2025.8.23</time>
+                                    <span class="news-category">ニュース</span>
+                                    <p class="news-message">WEBページを更新しました。WEBページを更新しました。WEBページを更新しました。WEBページを更新しました。</p>
+                                </div>
+                            </li>
+                            <li class="news-items">
+                                <div class="news-item">
+                                    <time class="news-date" datetime="2025-08-20">2025.8.20</time>
+                                    <span class="news-category">採用情報</span>
+                                    <p class="news-message">採用情報を修正しました。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="news-footer">
+                    <a href="news.html" class="news-button">
+                        <span class="btn-text">お知らせ一覧を見る</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 私たちについて -->
+        <section class="about-bg">
+            <div class="about-background" aria-hidden="true">
+                <p class="about-background_lt">GROW</p>
+                <p class="about-background_rb">ELECT</p>
+            </div>       
+            <div class="about">
+                <div class="content-wrapper">
+                    <div class="about-text">
+                        <div class="about-header">
+                            <h2>
+                                <span class="en">About us</span>
+                                <span class="jp">グロウエレクト</span>
+                            </h2>
+                        </div>
+                        <div class="about-body">
+                            <p class="mb-lg">
+                                グロウエレクトの運送事業部は品質の高さとスピードが特徴です。
+                            </p>
+                            <p class="mb-lg">
+                                与えられた仕事をただこなすのではなく、「配達の精鋭部隊」という意識を個人個人が持ち、責任を持ってお客様の元へ荷物をお届けします。
+                            </p>
+                            <p class="mb-lg">
+                                また、メンバーのほとんどが20代で構成されており、「元気とさわやかさ」を武器にお客様やパートナー様から高い評価を頂いています。
+                            </p>
+                        </div>
+                        <a href="about.html" class="about-detail-button" role="button">詳細を見る</a>
+                    </div>
+
+                    <div class="about-images">
+                        <img src="image\test_image.png" alt="人の写真" class="about-image">
+                        <img src="image\test_image_green.png" alt="人の写真" class="about-image">
+                        <img src="image\test_image_blue.png" alt="人の写真" class="about-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 採用情報 -->
+        <section>
+            <div class="recruit">
+                <div class="content-wrapper">
+                    <div class="recruit-text">
+                        <div class="recruit-header">
+                            <h2><span class="en">Recruit</span>採用情報</h2>
+                        </div>
+                        <div class="recruit-body">
+                            <p class="mb-lg">私たちと一緒に働いてみませんか？</p>
+                            <p class="mb-md">それぞれのライフスタイルに合わせて働ける環境をお待ちしております！</p>
+                        </div>
+                        <a href="recruit.html" class="about-detail-button" role="button">詳細を見る</a>
+                    </div>
+                    <div class="recruit-image">
+                        <img src="image\test_image.png" alt="人の写真" class="recruit-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 事業内容 -->
+        <section>
+            <div class="business">
+                <div class="business-text">
+                    <div class="business-header">
+                        <h2>
+                            <span class="en">Business</span>
+                            <span class="jp">事業内容</span>
+                        </h2>
+                    </div>
+                    <!-- <div class="business-body"> -->
+                        <!-- <p class="mb-sm">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。</p> -->
+                    <!-- </div> -->
+                </div>
+
+                <!-- 事業内容カード一覧 -->
+                <div class="business-cards">
+
+                    <!-- 運送業 -->
+                    <div class="business-card">
+                        <div class="card-image">
+                            <img src="image\test_image.png" alt="運送業">
+                        </div>
+                        <div class="card-content">
+                            <h3>
+                                <span class="jp">運送業</span>
+                                <span class="en">Transport</span>
+                            </h3>
+                            <p>
+                                お客様のご自宅へお届けする宅配業務と、企業様にお届けする企業配達業務の2種類を主に行っております。
+                            </p>
+                            <!-- <p class='mb-lg'>
+                                それ以外にも繁忙期などで人手不足の時のスポット配送などをご利用いただくこともあります。
+                            </p> -->
+                            <a href="business.html" class="card-button">&gt;</a>
+                        </div>
+                    </div>
+
+                    <!-- 通信業 -->
+                    <div class="business-card">
+                        <div class="card-image">
+                            <img src="image\test_image.png" alt="通信業">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-content-title">
+                                <span class="jp">通信業</span>
+                                <span class="en">Communication</span>
+                            </h3>
+                            <p>
+                                企業の商品やサービスの魅力をお客様に伝え、商品の購入やサービス契約を獲得する業務です。
+                            </p>
+                            <a href="business.html" class="card-button">&gt;</a>
+                        </div>
+                    </div>
+
+                    <!-- 建設業 -->
+                    <!-- <div class="business-card">
+                        <div class="card-image">
+                            <img src="image\test_image.png" alt="建設業">
+                        </div>
+                        <div class="card-content">
+                            <h3><span class="jp">建設業</span><span class="en">Construction</span></h3>
+                            <p>ZZZ...</p>
+                            <a href="business.html" class="card-button">&gt;</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- お問い合わせ-->
+        <section class="contact-section">
+            <div class="contact-overlay"></div>
+            <div class="contact-container">
+                <p class="subtitle">Contact</p>
+                <h2 class="title">お問い合わせ</h2>
+                <p class="description">
+                    サービスに関するお問い合わせ・お見積りなど、<br>
+                    まずはお気軽にご連絡ください。
+                </p>
+
+                <div class="contact-boxes">
+                    <!-- 電話番号 -->
+                    <div class="contact-item phone">
+                        <div class="box-content">
+                            <img src="image/call.svg" alt="電話" class="icon">
+                            <span>070-XXX-XXXX</span>
+                        </div>
+                        <div class="phone-info">
+                            <p><span class="label">定休日</span>｜<span class="value">日・祝</span></p>
+                            <p><span class="label">営業時間</span>｜<span class="value">8:00 ～ 17:00</span></p>
+                        </div>
+                    </div>
+
+                    <!-- お問い合わせボタン -->
+                    <a href="contact.html" class="contact-item inquiry">
+                        <div class="box-content">
+                            <img src="image/mail.svg" alt="メール" class="icon">
+                            <span>お問い合わせ</span>
+                            <span class="arrow">＞</span>
+                        </div>
+                        <div class="arrow-buttons">
+                            <button><img src="image/icon-line.svg" alt="矢印1"></button>
+                            <button><img src="image/icon-instagram.svg" alt="矢印2"></button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <div data-include="parts/footer.html"></div>
+
+    <script src="include.js"></script>
+</body>
+
+<!-- <footer>
+    <section class="footer">
+        <div class="top">
+            <div class="information">
+                <div class="information-logo">
+                    <img class="logo" src="image/logo_growelect.png" alt="Jito">
+                    <p class="logo-text">合同会社グロウエレクト</p>
+                </div>
+                <div class="information-address">
+                    <p>〒939-8058&ensp;富山県富山市大泉２番地５</p>
+                    <p>TEL : 076-XXX-XXXX</p>
+                    <p></p>FAX : 076-XXX-XXXX</p>
+                </div>
+            </div>
+
+            <div class="link">
+                <ul class="link_list">
+                    <li class="parent-link">
+                        <a href="#">私たちについて</a>
+                        <ul class="child-link">
+                            <li><a href="#">グロウエレクトとは</a></li>
+                            <li><a href="#">経営理念</a></li>
+                            <li><a href="#">TEST_1</a></li>
+                            <li><a href="#">TEST_2</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent-link">
+                        <a href="#">事業内容</a>
+                        <ul class="child-link">
+                            <li><a href="#">運送業</a></li>
+                            <li><a href="#">通信業</a></li>
+                            <li><a href="#">建設業</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent-link">
+                        <a href="#">採用情報</a>
+                        <ul class="child-link">
+                            <li><a href="#">採用メッセージ</a></li>
+                            <li><a href="#">募集職種</a></li>
+                            <li><a href="#">働く環境</a></li>
+                            <li><a href="#">社員の声</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent-link">
+                        <a href="#">新着情報</a>
+                        <ul class="child-link">
+                            <li><a href="#">TEST_3</a></li>
+                            <li><a href="#">TEST_4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <small>
+                Copyright © Express Growelect Co., Ltd. All Rights Reserved.
+            </small>
+        </div>
+    </section>
+</footer> -->
+
+</html>
