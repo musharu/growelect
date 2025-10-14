@@ -89,7 +89,7 @@
 
                             <div class="contact-form__group">
                                 <label class="contact-form__label">電話番号<span class="contact-form__required">必須</span></label>
-                                <input class="contact-form__input" type="tel" name="phone" placeholder="例）090-1234-5678" required inputmode="numeric" pattern="[0-9\-]*">
+                                <input class="contact-form__input" type="tel" id="phone" name="phone" placeholder="例）090-1234-5678" required inputmode="numeric" pattern="[0-9\-]*" maxlength="13">
                                 <p class="contact-form__errmsg" id="error-phone"></p>
                             </div>
 
@@ -359,16 +359,17 @@
         // 数字以外を削除
         let value = e.target.value.replace(/\D/g, '');
 
-        // フォーマット: 3桁 - 4桁 - 4桁
-        if (value.length > 3 && value.length <= 7) {
-            value = value.replace(/(\d{3})(\d+)/, '$1-$2');
-        } else if (value.length > 7) {
-            value = value.replace(/(\d{3})(\d{4})(\d+)/, '$1-$2-$3');
+        // 数字だけを使ってフォーマット再構築
+        if (value.length <= 3) {
+            e.target.value = value; // 3桁まで
+        } else if (value.length <= 7) {
+            e.target.value = value.slice(0, 3) + "-" + value.slice(3); // 3-4桁
+        } else {
+            e.target.value = value.slice(0, 3) + "-" + value.slice(3, 7) + "-" + value.slice(7, 11); // 3-4-4桁
         }
-
-        e.target.value = value;
     });
 
 
 </script>
+
 
