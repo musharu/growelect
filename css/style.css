@@ -1,43 +1,48 @@
 :root {
-    --main-blue: #5B6EAB;
-    --text-color: #333;
-    --bg-light: #f8f9fc;
-    --section-gap: 4rem;
-    --header-height: 70px;
+  --main-color: #5B6EAB;
+  /* --main-color: #28329a; */
+  /* --main-color: green; */
+  --text-color: #333;
+  --section-gap: 3rem;
+  --header-height: 70px;
 }
 section {
-    margin-bottom: var(--section-gap);
+  margin-bottom: var(--section-gap);
 }
 
-
 * {
-    /* outline: 1px solid red !important; */
+  /* outline: 1px solid red !important; */
 }
 
 
 body {
-    font-family: Arial, sans-serif;
-    background: white;
-    margin: 0;
-    color: var(--text-color);
-    margin-top: var(--header-height);
-    line-height: 1.8;
+  /* font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif; */
+  font-family: Arial, sans-serif;
+  background: white;
+  margin: 0;
+  color: var(--text-color);
+  margin-top: var(--header-height);
+  line-height: 1.8;
 }
 
 h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    line-height: 1.5;
-    margin: 0;
-    font-family: "fot-tsukuardgothic-std", sans-serif;
-    -webkit-font-feature-settings: "palt";
-    font-feature-settings: "palt";
-    letter-spacing: 0.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "fot-tsukuardgothic-std", sans-serif;
+  -webkit-font-feature-settings: "palt";
+  font-feature-settings: "palt";
+  letter-spacing: 0.1rem;
 }
 
 .mb-sm { margin: 0 0 0.5rem 0; }
 .mb-md { margin: 0 0 1rem 0; }
 .mb-lg { margin: 0 0 1.5rem 0; }
 
+
+section[id] {
+  scroll-margin-top: 40px;
+}
 
 
 /* サブページ共通Hero */
@@ -76,31 +81,26 @@ h2, h3, h4, h5, h6 {
 
 /* サブページ共通ナビゲーション */
 .sub-nav {
-  background: var(--main-blue);
+  background: var(--main-color);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
   padding: 0.7rem 3rem 0.7rem;
   line-height: 2;
-  gap: 0rem 2rem;
+  gap: 0 2.5rem;
   font-size: 0.9rem;
 }
 
-.sub-nav a {
+.sub-nav__link {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 300;
 }
 
-.sub-nav a:after {
-  content: " ＞";
+.sub-nav__link:hover {
+  font-weight: bold;
 }
-
-.sub-nav a:hover {
-  color: rgba(255, 255, 255, 0.85);
-}
-
 
 .breadcrumb {
   font-size: 0.9rem;
@@ -129,12 +129,12 @@ h2, h3, h4, h5, h6 {
 
 .breadcrumb a {
   text-decoration: none;
-  color: var(--main-blue, rgb(91, 110, 171));
+  color: var(--main-color);
   transition: color 0.2s ease;
 }
 
 .breadcrumb a:hover {
-  color: #000;
+  font-weight: bold;
 }
 
 
@@ -147,7 +147,6 @@ h2, h3, h4, h5, h6 {
 .sec-title {
   position: relative;
   margin: 0 0 2rem 0;
-  color: #444;
   padding-bottom: 0.2rem;
   font-size: 2.8rem;
   font-weight: 600;
@@ -161,7 +160,7 @@ h2, h3, h4, h5, h6 {
   width: 100%;
   background: linear-gradient(
     to right,
-    var(--main-blue) 0 30px,
+    var(--main-color) 0 30px,
     #ccc 30px 100%
   );
 }
@@ -170,7 +169,6 @@ h2, h3, h4, h5, h6 {
   text-align: center;
   position: relative;
   margin: 0 0 2rem 0;
-  color: #444;
   padding: 0;
   font-size: 1.6rem;
   font-weight: 600;
@@ -204,23 +202,23 @@ h2, h3, h4, h5, h6 {
 
 
 @media (max-width: 768px) {
-    .sub-nav {
-        gap: 0 1rem;
-        padding: 0.7rem 10px 0.7rem;
-    }
-    .sub-hero-text h2 {
-        font-size: 2.5rem;
-        line-height: 0.8;
-    }
-    .sub-hero-text span {
-        font-size: 1.2rem;
-    }
-    .sub-hero-text {
-        left: 0%;
-        width: 100%;
-        text-align: center;
-    }
-    .sec-title {
-        font-size: 1.7rem;
-    }
+  .sub-nav {
+      gap: 0 1rem;
+      padding: 0.7rem 10px 0.7rem;
+  }
+  .sub-hero-text h2 {
+      font-size: 2.5rem;
+      line-height: 0.8;
+  }
+  .sub-hero-text span {
+      font-size: 1.2rem;
+  }
+  .sub-hero-text {
+      left: 0%;
+      width: 100%;
+      text-align: center;
+  }
+  .sec-title {
+      font-size: 1.7rem;
+  }
 }

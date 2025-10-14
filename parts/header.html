@@ -1,48 +1,45 @@
 <body>
-    <header class="fixed-header">
-        <h1>
-            <a class="header__logo" href="index.html">
-                <img class="logo" src="image/logo_growelect.png" alt="グロウエレクト合同会社">
+    <header class="header header--fixed">
+        <h1 class="header__logo-wrapper">
+            <a href="index.html" class="header__logo">
+                <img src="image/logo_growelect.png" alt="グロウエレクト合同会社" class="header__logo-img">
             </a>
         </h1>
+
         <nav class="header__nav">
-            <a href="about.html" class="split">
-                <span class="link-text">私たちについて</span>
-                <span class="slash">／</span>
+            <a href="about.html" class="header__link">
+                <span class="header__link-text">私たちについて</span>
+                <span class="header__link-slash">／</span>
             </a>
-            <a href="business.html" class="split">
-                <span class="link-text">事業内容</span>
-                <span class="slash">／</span>
+            <a href="business.html" class="header__link">
+                <span class="header__link-text">事業内容</span>
+                <span class="header__link-slash">／</span>
             </a>
-            <a href="recruit.html" class="split">
-                <span class="link-text">採用情報</span>
-                <span class="slash">／</span>
+            <a href="recruit.html" class="header__link">
+                <span class="header__link-text">採用情報</span>
+                <span class="header__link-slash">／</span>
             </a>
-            <a href="index.html" class="split">
-                <span class="link-text">HOME</span>
+            <a href="index.html" class="header__link">
+                <span class="header__link-text">ホーム</span>
             </a>
-            <a href="contact.html" class="contact-btn">お問い合わせ</a>
+            <a href="contact.html" class="header__link header__link--contact">お問い合わせ</a>
         </nav>
 
-        
-        <div>
-            <div class="hamburger-menu">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-
-            <nav class="nav-menu">
-            <a href="index.html">HOME</a>
-            <a href="about.html" class="split">私たちについて</a>
-            <a href="business.html" class="split">事業内容</a>
-            <a href="recruit.html" class="split">採用情報</a>
-            <a href="contact.html" class="contact-btn">お問い合わせ</a>
-            </nav>
-
-            <div class="overlay"></div>
+        <!-- ハンバーガーメニュー -->
+        <div class="header__hamburger hamburger-menu">
+            <span class="hamburger-menu__line"></span>
+            <span class="hamburger-menu__line"></span>
+            <span class="hamburger-menu__line"></span>
         </div>
-    
-    </header>
 
+        <nav class="header__nav-mobile nav-menu">
+            <a href="index.html" class="nav-menu__link">ホーム</a>
+            <a href="about.html" class="nav-menu__link">私たちについて</a>
+            <a href="business.html" class="nav-menu__link">事業内容</a>
+            <a href="recruit.html" class="nav-menu__link">採用情報</a>
+            <a href="contact.html" class="nav-menu__link nav-menu__link--contact">お問い合わせ</a>
+        </nav>
+
+        <div class="header__overlay"></div>
+    </header>
 </body>

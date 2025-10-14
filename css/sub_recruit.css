@@ -1,8 +1,10 @@
 /* Message */
 .message-content {
-    display: flex;
-    gap: 30px 70px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px 70px;
+  flex-wrap: wrap;
 }
 
 .flex-6 {
@@ -10,18 +12,18 @@
   min-width: 300px;
 }
 .flex-4 {
-    flex: 4;
-    min-width: 200px;
+  flex: 4;
+  min-width: 200px;
 }
 
 .message-image img {
-    width: 100%;
-    border-radius: 3px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 
 .message-text h2 {
-  color: var(--main-blue);
+  color: var(--main-color);
   margin-bottom: 1rem;
 }
 
@@ -72,10 +74,8 @@ ul.custom-list li {
   margin: 0;
 }
 ul.custom-list li::before {
-  content: "－";
+  content: "-";
   display: inline-block;
-  color: var(--main-blue);
-  margin-right: 0.5em;
 }
 
 .schedule-list li{
@@ -156,7 +156,15 @@ ul.custom-list li::before {
     flex-direction: column-reverse;
   }
 
+  .message-content {
+    align-items: center;
+  }
+  .message-image {
+    width: 70%;
+  }
+
   .interview-image {
+    display: block;
     flex: none;
     max-width: 400px;
   }
@@ -181,7 +189,7 @@ ul.custom-list li::before {
 }
 
 .recruit-info th, .recruit-info td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
   padding: 15px;
   text-align: left;
 }
@@ -189,8 +197,9 @@ ul.custom-list li::before {
 .recruit-info th {
   min-width: 95px;
   width: 25%;
-  background: rgba(91, 110, 171, 0.1);
-  color: var(--main-blue);
+  /* background: rgba(91, 110, 171, 0.1); */
+  background-color: color-mix(in srgb, var(--main-color) 10%, transparent);
+  color: var(--main-color);
 }
 
 
