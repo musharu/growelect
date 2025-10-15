@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="当社は富山県富山市に拠点を置く、運送のプロフェッショナルです。">
+    <meta name="keywords" content>
+    <meta name="author" content="musha">
+    <meta name="robots" content>
+    <meta property="og:title" content="合同会社グロウエレクト｜富山県富山市">
+    <meta property="og:description" content="当社は富山県富山市に拠点を置く、運送のプロフェッショナルです。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.***.com/">
+    <meta property="og:image" content="https://www.***.com/image/***.ico">
+    <meta property="og:site_name" content="合同会社グロウエレクト｜富山県富山市">
+    <meta property="og:locale" content="ja_JP">
     <title>growelect</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_header.css">
     <link rel="stylesheet" href="css/style_footer.css">
-    <!-- <link rel="stylesheet" href="css/sub_recruit.css"> -->
     <link rel="stylesheet" href="css/contact.css">
-
 </head>
 
 
@@ -132,7 +141,6 @@
                                 <button class="contact-form__button" type="submit">入力内容を確認する</button>
                             </div>                        
                         </form>
-                        
                     </section>
 
                     <!-- 確認モーダル -->
@@ -162,214 +170,7 @@
     
     <div data-include="parts/footer.html"></div>
 
-    <script src="include.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-    const form = document.getElementById("contactForm");
-    const backBtn = document.getElementById("backBtn");
-    const overlay = document.getElementById("contact__overlay");
-    const submitBtn = document.getElementById("finalSubmit");
-    const result = document.getElementById("result-message");
-    const ACCESS_TOKEN = "t002";
-
-    form.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        let valid = true;
-        let errorElement = null;
-        
-        const name = this.name.value.trim();
-        const company = this.company.value.trim();
-        const email = this.email.value.trim();
-        const phone = this.phone.value.trim();
-        const message = this.message.value.trim();
-    
-
-        const errorElements = {
-            name: document.getElementById("error-name"),
-            company: document.getElementById("error-company"),
-            email: document.getElementById("error-email"),
-            phone: document.getElementById("error-phone"),
-            message: document.getElementById("error-message"),
-        };
-
-        // エラーメッセージをリセット
-        for (const key in errorElements) {
-            errorElements[key].textContent = "";
-        }
-
-        // 入力チェック
-        if(!message){
-            errorElements.message.textContent = "お問い合わせ内容を入力してください。";
-            errorElement = errorElements.message;
-            valid = false;
-        }
-        else if(message.length > 1000){
-            errorElements.message.textContent = "1000文字以内にしてください。";
-            errorElement = errorElements.message;
-            valid = false;
-        }
-        if (!phone) {
-            errorElements.phone.textContent = "電話番号を入力してください。";
-            errorElement = errorElements.phone;
-            valid = true;
-        }
-        else if(!phone.match(/^0\d{1,4}-?\d{1,4}-?\d{3,4}$/) || phone.length > 20){
-            errorElements.phone.textContent = "電話番号の形式が正しくありません（例：090-1234-5678）。";
-            errorElement = errorElements.phone;
-            valid = false;
-        } 
-        if (!email){
-            errorElements.email.textContent = "メールアドレスを入力してください。";
-            errorElement = errorElements.email;
-            valid = true;
-        }
-        else if(email.length > 100){
-            errorElements.email.textContent = "100文字以内にしてください。";
-            errorElement = errorElements.email;
-            valid = false;
-        }
-        else if(!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)){
-            errorElements.email.textContent = "メールアドレスの形式が正しくありません。";
-            errorElement = errorElements.email;
-            valid = false;
-        }        
-        if(!name){
-            errorElements.name.textContent = "お名前を入力してください。";
-            errorElement = errorElements.name;
-            valid = false;
-        }
-        else if(name.length > 50){
-            errorElements.name.textContent = "50文字以内にしてください。";
-            errorElement = errorElements.name;
-            valid = false;
-        }
-
-
-        if(!valid) {
-            if(errorElement){
-                errorElement.scrollIntoView({ behavior: "smooth", block: "center" });
-            }
-            return;
-        };
-
-        // モーダルに内容を反映
-        document.getElementById("confirm-name").textContent = name;
-        document.getElementById("confirm-company").textContent = company || "（なし）";
-        document.getElementById("confirm-email").textContent = email;
-        document.getElementById("confirm-phone").textContent = phone;
-        document.getElementById("confirm-message").textContent = message;
-
-        // モーダル表示
-        document.getElementById("contact__overlay").style.display = "flex";
-    });
-
-    // 最終確認 戻るボタン
-    backBtn.addEventListener("click", () => {
-        overlay.style.display = "none";
-    });
-
-    // 最終確認 送信ボタン
-    submitBtn.addEventListener("click", async () => {
-
-        // すぐに二度押しできないようにする
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = "0.6";
-        submitBtn.style.pointerEvents = "none";
-        backBtn.style.pointerEvents = "none";
-
-        result.textContent = "送信中です…";
-        result.style.color = "#333";
-
-        // const form = document.getElementById("contactForm");
-        const data = Object.fromEntries(new FormData(form).entries());
-        data.token = ACCESS_TOKEN;
-        
-        result.textContent = "送信中です…";
-        try {
-            const res = await fetch('https://script.google.com/macros/s/AKfycbxyd3dG1FomBR8N1sL8RbP618kO2EwJhnwNB-XC48suLcO6in6_uzGwmEo4OTIxjMmrtg/exec', {
-                method: 'POST',
-                // headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(data),
-            });
-
-            const json = await res.json();
-
-            if (json.result === 'success') {
-                result.textContent = '送信が完了しました。';
-                result.style.color = '#15b815';
-                form.reset();
-                
-                submitBtn.style.display = "none"; // ボタンを非表示にする
-                backBtn.textContent = "閉じる"; //  戻るボタンのテキストを「閉じる」に変更
-            } else {
-                result.textContent = '送信に失敗しました。ネットワーク環境をご確認の上、再度送信してください。';
-                result.style.color = '#e60000';
-            }
-    
-        } catch (err) {
-            console.error(err);
-            result.textContent = 'エラーが発生しました。';
-            result.style.color = '#e60000';
-        }
-
-        // alert('aaa')
-
-
-        // 処理終了後、再度ボタンを有効化
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = "1";
-        submitBtn.style.pointerEvents = "auto";
-        backBtn.style.pointerEvents = "auto";
-    });
-
-    // 送信完了後 閉じるボタン（戻るボタン）
-    backBtn.addEventListener("click", () => {
-        overlay.style.display = "none";
-        result.textContent = "";
-        submitBtn.style.display = "inline-block";
-        backBtn.textContent = "戻る";
-    });
-
-
-    
-    document.getElementById('phone').addEventListener('input', function (e) {
-
-        // 数字以外を削除
-        let value = e.target.value.replace(/\D/g, '');
-
-        // 数字だけを使ってフォーマット再構築
-        if (value.length <= 3) {
-            e.target.value = value; // 3桁まで
-        } else if (value.length <= 7) {
-            e.target.value = value.slice(0, 3) + "-" + value.slice(3); // 3-4桁
-        } else {
-            e.target.value = value.slice(0, 3) + "-" + value.slice(3, 7) + "-" + value.slice(7, 11); // 3-4-4桁
-        }
-    });
-
-
-</script>
-
-

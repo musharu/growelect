@@ -14,12 +14,7 @@
     <meta property="og:image" content="https://www.***.com/image/***.ico">
     <meta property="og:site_name" content="合同会社グロウエレクト｜富山県富山市">
     <meta property="og:locale" content="ja_JP">
-
     <title>growelect</title>
-
-
-
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_header.css">
     <link rel="stylesheet" href="css/style_news.css">
@@ -70,34 +65,19 @@
             <button class="hero__prev"><span>&#10094;</span></button>
             <button class="hero__next"><span>&#10095;</span></button>
         </section>
-    
-
-        
 
         <!-- 新着情報 -->
         <section class="news">
             <div class="news__header-wrapper">
                 <div class="news__header">
-                <h2 class="news__title">
-                    <span class="news__title-en">News</span>
-                    <span class="news__title-ja">お知らせ</span>
-                </h2>
+                    <h2 class="news__title">
+                        <span class="news__title-en">News</span>
+                        <span class="news__title-ja">お知らせ</span>
+                    </h2>
                 </div>
                 <div class="news__body">
-                <ul class="news__list">
-                    <li class="news__item">
-                        <time class="news__date" datetime="2025-08-23">2025.10.10</time>
-                        <span class="news__category">悲報</span>
-                        <p class="news__message">
-                            新谷チャンネルがコロナウイルスに感染しました。
-                        </p>
-                    </li>
-                    <li class="news__item">
-                        <time class="news__date" datetime="2025-08-20">2025.9.26</time>
-                        <span class="news__category">ニュース</span>
-                        <p class="news__message">アティさんの修業式にスペシャルゲストが参加しました。</p>
-                    </li>
-                </ul>
+                    <ul id="newsList" class="news__list">
+                    </ul>
                 </div>
             </div>
             <div class="news__footer">
@@ -106,8 +86,8 @@
                 </a>
             </div>
         </section>
-
         
+
         <!-- わたしたちについて -->
         <section class="about-section">
             <div class="about__background" aria-hidden="true">
@@ -176,7 +156,6 @@
                 </div>
             </div>
         </section>
-
 
 
         <!-- 事業内容 -->
@@ -281,6 +260,52 @@
 
     <div data-include="parts/footer.html"></div>
 
-    <script src="include.js"></script>
+    <script src="js/include.js"></script>
 </body>
 </html>
+
+
+
+<script>
+
+    // 上位N件取得(latest.jsonから) & html記載
+    document.addEventListener("DOMContentLoaded", () => {
+    const list = document.getElementById("newsList");
+
+    // 記事一覧を取得
+    fetch("data/articles_index.json")
+        .then(res => res.json())
+        .then(files => {
+
+            files.reverse(); // 最新のものを順番に
+            const latestFiles = files.slice(0, 3); // 最新 N件を対象
+
+            // 各ファイルの中身を取得
+            return Promise.all(
+                latestFiles.map(file => fetch(`data/articles/${file}`).then(r => r.json()))
+            );
+        })
+        .then(articles => {
+
+            // 取得した記事をHTMLに反映
+            articles.forEach(item => {
+                const li = document.createElement("li");
+                li.className = "news__item";
+                li.innerHTML = `
+                    <a href="detail.html?id=${item.id}&from=index" class="news__link">
+                        <div class="news__meta">
+                            <time class="news__date">${item.date.replace(/-/g, '.')}</time>
+                            <span class="news__category">${item.category}</span>                            
+                        </div>
+                        <p class="news__message">${item.title}</p>
+                    </a>
+                `;
+                list.appendChild(li);
+            });
+        })
+        .catch(err => {
+            // console.error(err);
+            list.innerHTML = `<p style="margin-left: 2rem">ニュースを読み込みに失敗しました。<p>`;
+        });
+    });
+</script>

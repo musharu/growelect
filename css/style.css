@@ -203,22 +203,23 @@ section[id] {
 
 @media (max-width: 768px) {
   .sub-nav {
-      gap: 0 1rem;
-      padding: 0.7rem 10px 0.7rem;
+    gap: 0 1rem;
+    padding: 0.7rem 10px 0.7rem;
   }
   .sub-hero-text h2 {
-      font-size: 2.5rem;
-      line-height: 0.8;
+    font-size: 2.5rem;
+    line-height: 0.8;
   }
   .sub-hero-text span {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
   .sub-hero-text {
-      left: 0%;
-      width: 100%;
-      text-align: center;
+    left: 0%;
+    width: 100%;
+    text-align: center;
   }
   .sec-title {
-      font-size: 1.7rem;
+    font-size: 1.7rem;
+    text-align: center;
   }
 }
